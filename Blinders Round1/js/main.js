@@ -107,7 +107,7 @@ function showDiffImg(){
 	else if(getID.toUpperCase() == 'TEAM10'.toUpperCase()){
 		document.getElementById("imageView").src="images/10.jpg";
 	}
-	localStorage.url = "http://blinders2.herokuapp.com";
+	localStorage.url = "http://127.0.0.1:5000";
 }
 
 function allover(){
