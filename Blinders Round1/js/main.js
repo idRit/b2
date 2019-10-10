@@ -47,12 +47,15 @@ async function ded(){
 
 
 var totalSeconds = 0;
+
+let minutesLabel;
+let secondsLabel;
 setInterval(setTime, 1000);
 
 function setTime() {
   ++totalSeconds;
-  var minutesLabel = document.getElementById("minutes");
-  var secondsLabel = document.getElementById("seconds");
+  minutesLabel = document.getElementById("minutes");
+  secondsLabel = document.getElementById("seconds");
   secondsLabel.innerHTML = pad(totalSeconds % 60);
   minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
 }
@@ -113,6 +116,3 @@ function allover(){
 	document.getElementById('minu_f').innerHTML = me_mc_hu;
 	document.getElementById('acc_f').innerHTML = localStorage.accuracy;
 }
-
-
-
