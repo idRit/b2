@@ -1,0 +1,41 @@
+<html>
+<head>
+<script>
+function ded(){
+    var haha = document.getElementById('lamo1').value;
+    url = "http://127.0.0.1:5000/api/blindCheckMovie/" + haha;
+    window.location = url;
+}
+
+
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  var minutesLabel = document.getElementById("minutes");
+  var secondsLabel = document.getElementById("seconds");
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+
+</script>
+ 
+</head>
+<body>
+<form id="tf" method="GET" autocomplete="off">
+<input autocomplete="off" type="text" id="lamo1" name="lamo1" onclick="setTime()"> </textarea>
+<button type="button" onclick="ded()" id="button_comment"> Submit </button> 
+<label id="minutes">00</label>:<label id="seconds">00</label>
+</form>
+</body>
+</html>
